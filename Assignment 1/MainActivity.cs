@@ -42,7 +42,7 @@ namespace Assignment_1
             {
                 QuantityShowTv.Text = QuantitySeekBar.Progress.ToString();
             };
-
+             
 
             TotalBtn.Click += delegate
             {
