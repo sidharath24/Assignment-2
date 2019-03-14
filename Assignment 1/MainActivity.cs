@@ -12,17 +12,27 @@ namespace Assignment_1
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
+        TextView PriceShowTv, QuantityShowTv, TotalShowTv, FinalPriceShow;
+        Button TotalBtn;
+        RadioButton rdb5, rdb10, rdb15;
+        SeekBar PriceSeekBar, QuantitySeekBar;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
 
-            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
-            SetSupportActionBar(toolbar);
-
-            FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
-            fab.Click += FabOnClick;
+            PriceShowTv = (TextView)FindViewById(Resource.Id.tvPriceShow);
+            QuantityShowTv = (TextView)FindViewById(Resource.Id.TvQuantityShow);
+            TotalShowTv = (TextView)FindViewById(Resource.Id.TvTotalShow);
+            FinalPriceShow = (TextView)FindViewById(Resource.Id.TvFinalPriceShow);
+            TotalBtn = (Button)FindViewById(Resource.Id.btnTotal);
+            rdb5 = (RadioButton)FindViewById(Resource.Id.radioButton1);
+            rdb10 = (RadioButton)FindViewById(Resource.Id.radioButton2);
+            rdb15 = (RadioButton)FindViewById(Resource.Id.radioButton3);
+            PriceSeekBar = (SeekBar)FindViewById(Resource.Id.sbPrice);
+            QuantitySeekBar = (SeekBar)FindViewById(Resource.Id.SbQuantity);
+            
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
