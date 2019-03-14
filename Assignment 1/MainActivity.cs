@@ -32,7 +32,48 @@ namespace Assignment_1
             rdb15 = (RadioButton)FindViewById(Resource.Id.radioButton3);
             PriceSeekBar = (SeekBar)FindViewById(Resource.Id.sbPrice);
             QuantitySeekBar = (SeekBar)FindViewById(Resource.Id.SbQuantity);
-            
+
+            PriceSeekBar.ProgressChanged += delegate
+            {
+                PriceShowTv.Text = PriceSeekBar.Progress.ToString();
+            };
+
+            QuantitySeekBar.ProgressChanged += delegate
+            {
+                QuantityShowTv.Text = QuantitySeekBar.Progress.ToString();
+            };
+
+
+            TotalBtn.Click += delegate
+            {
+                if (rdb5.Checked)
+                {
+                    double total = (PriceSeekBar.Progress * QuantitySeekBar.Progress) - ((PriceSeekBar.Progress * QuantitySeekBar.Progress) * 0.05);
+                    TotalShowTv.Text = total.ToString();
+                    double FinalPrice = total + (0.13 * total);
+                    FinalPriceShow.Text = FinalPrice.ToString();
+                }
+
+                if (rdb10.Checked)
+                {
+                    double total = (PriceSeekBar.Progress * QuantitySeekBar.Progress) - ((PriceSeekBar.Progress * QuantitySeekBar.Progress) * 0.10);
+                    TotalShowTv.Text = total.ToString();
+                    double FinalPrice = total + (0.13 * total);
+                    FinalPriceShow.Text = FinalPrice.ToString();
+                }
+
+                if (rdb15.Checked)
+                {
+                    double total = (PriceSeekBar.Progress * QuantitySeekBar.Progress) - ((PriceSeekBar.Progress * QuantitySeekBar.Progress) * 0.15);
+                    TotalShowTv.Text = total.ToString();
+                    double FinalPrice = total + (0.13 * total);
+                    FinalPriceShow.Text = FinalPrice.ToString();
+                }
+
+                
+
+            };
+
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)

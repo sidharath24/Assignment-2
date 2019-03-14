@@ -23,7 +23,8 @@
 				android:id="@+id/TvPrice" />
 			<SeekBar
 				android:layout_column="1"
-				android:id="@+id/sbPrice" />
+				android:id="@+id/sbPrice"
+				android:max="200" />
 			<TextView
 				p4:placeholder="true"
 				android:minWidth="30px"
@@ -43,7 +44,8 @@
 				android:id="@+id/TvQuantity" />
 			<SeekBar
 				android:layout_column="1"
-				android:id="@+id/SbQuantity" />
+				android:id="@+id/SbQuantity"
+				android:max="50" />
 			<TextView
 				p4:placeholder="true"
 				android:minWidth="30px"
@@ -71,17 +73,20 @@
 					android:layout_height="wrap_content"
 					android:checked="true"
 					android:text="5%"
-					android:id="@+id/radioButton1" />
+					android:id="@+id/radioButton1"
+					android:textSize="12dp" />
 				<RadioButton
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:text="10%"
-					android:id="@+id/radioButton2" />
+					android:id="@+id/radioButton2"
+					android:textSize="12dp" />
 				<RadioButton
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:text="15%"
-					android:id="@+id/radioButton3" />
+					android:id="@+id/radioButton3"
+					android:textSize="12dp" />
 			</RadioGroup>
 		</TableRow>
 		<TableRow
